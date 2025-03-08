@@ -4,6 +4,7 @@
 import spacy
 from spacy.matcher import Matcher
 import re
+spacy.load('en_core_web_sm')
 
 class QueryParser:
     """
@@ -197,7 +198,7 @@ if __name__ == "__main__":
     parser = QueryParser()
     
     # Example complex sentence
-    complex_query = "Find all users who signed up before January (but only those who completed their profile) and tell me how many purchases they made while also showing their average purchase value."
+    complex_query = "Explain quantum entanglement, including its definition, the EPR paradox, how it's tested in Bell's theorem experiments, and its applications in quantum cryptography."
     
     chunks = parser.parse(complex_query)
     print("Original query:", complex_query)

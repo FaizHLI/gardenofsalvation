@@ -1,20 +1,35 @@
+import nltk
+import re
 from serpapi import GoogleSearch
-from sumy.parsers.plaintext import PlaintextParser
-from sumy.summarizers.text_rank import TextRankSummarizer
-from sumy.nlp.tokenizers import Tokenizer
+
+nltk.download('punkt_tab')
+
 def search_query(query):
-    # Call the search API (e.g., SerpAPI)
     params = {
-        'q': query, 
-        'api_key': '697666a209ae95ce18a4ff552cb392c5f6d449ce79a9af43afc878ac7c8f1fe3',  # Replace with your actual API key
+        'q': query,
+        'api_key': '697666a209ae95ce18a4ff552cb392c5f6d449ce79a9af43afc878ac7c8f1fe3'  # Replace with actual API key
     }
     search = GoogleSearch(params)
     results = search.get_dict()
-    
     return results if results else None
 
-def summarize_text(text, num_sentences=3):
-    parser = PlaintextParser.from_string(text, Tokenizer("english"))
-    summarizer = TextRankSummarizer()
-    summary = summarizer(parser.document, num_sentences)
-    return ' '.join(str(sentence) for sentence in summary)
+def clean_text(text):
+    """Remove trailing ellipses and normalize spacing."""
+    text = re.sub(r'\s*\.\.\.', '', text)  # Remove cut-off phrases
+    text = re.sub(r'\s+', ' ', text).strip()  # Normalize spaces
+    return text
+
+def get_answer_box(results):
+    """Get the answer box from the search results if available."""
+    if "answer_box" in results:
+        return results["answer_box"].get("answer", None)
+    return None
+
+def get_snippet_and_link(results):
+    """Get a snippet and a link from the organic results."""
+    if "organic_results" in results:
+        first_result = results["organic_results"][0]
+        snippet = clean_text(first_result.get("snippet", ""))
+        link = first_result.get("link", "")
+        return snippet, link
+    return None, None
