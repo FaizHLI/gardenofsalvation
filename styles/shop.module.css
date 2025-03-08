@@ -1,0 +1,259 @@
+/* styles/Shop.module.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #272727;
+    color: #f5f1e5;
+  }
+  
+  .header {
+    padding: 1rem;
+    background-color: #1d1d1d;
+    color: white;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #4caf50;
+  }
+  
+  .navLink {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    background-color: rgba(76, 175, 80, 0.2);
+    transition: background-color 0.3s;
+  }
+  
+  .navLink:hover {
+    background-color: rgba(76, 175, 80, 0.4);
+  }
+  
+  .tokenBar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+  
+  .tokenCount {
+    display: flex;
+    align-items: center;
+    background-color: rgba(76, 175, 80, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+  }
+  
+  .tokenIcon {
+    margin-right: 0.5rem;
+  }
+  
+  .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    color: white;
+    z-index: 100;
+    animation: fadeInOut 3s ease-in-out;
+  }
+  
+  .success {
+    background-color: #4caf50;
+  }
+  
+  .error {
+    background-color: #f44336;
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+  }
+  
+  .main {
+    flex: 1;
+    padding: 2rem;
+    background-color: #707070;
+  }
+  
+  .shopIntro {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+  }
+  
+  .shopIntro h2 {
+    font-size: 1.75rem;
+    color: #4caf50;
+    margin-bottom: 0.5rem;
+  }
+  
+  .shopIntro p {
+    color: #d0d0d0;
+  }
+  
+  .earnTip {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3a3a3a;
+    color: #ff9800;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+  }
+  
+  .tipIcon {
+    margin-right: 0.5rem;
+  }
+  
+  .fishGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .fishCard {
+    background-color: #3a3a3a;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .fishCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  .fishPreview {
+    height: 120px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #1a1a1a;
+  }
+  
+  .fishPreview:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background-color: rgba(76, 75, 73, 0.7);
+    border-top-left-radius: 50% 20px;
+    border-top-right-radius: 50% 20px;
+  }
+  
+  .fishPreview > * {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  .fishPreview .tail {
+    position: absolute;
+    top: 25%;
+    right: -25px;
+    width: 30px;
+    height: 50%;
+    background-color: inherit;
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+  }
+  
+  .fishPreview .eye {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  
+  .fishDetails {
+    padding: 1rem;
+    flex: 1;
+  }
+  
+  .fishName {
+    margin: 0 0 0.25rem;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    color: #e0e0e0;
+  }
+  
+  .fishRarity {
+    margin: 0 0 0.75rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .common {
+    color: #b0b0b0;
+  }
+  
+  .uncommon {
+    color: #4fc3f7;
+  }
+  
+  .rare {
+    color: #ce93d8;
+  }
+  
+  .fishPrice {
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ff9800;
+  }
+  
+  .buyButton {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4caf50;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buyButton:hover:not(.disabled) {
+    background-color: #388e3c;
+  }
+  
+  .buyButton.disabled {
+    background-color: #505050;
+    color: #909090;
+    cursor: not-allowed;
+  }
+  
+  .footer {
+    padding: 1.5rem;
+    background-color: #1d1d1d;
+    color: white;
+    text-align: center;
+  }

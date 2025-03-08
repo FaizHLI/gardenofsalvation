@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Monsterrat', sans-serif;
+    background-color: #272727;
+    color: #4caf50;
+  }
+  
+  .header {
+    padding: 1rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .backLink {
+    color: #0070f3;
+    text-decoration: none;
+  }
+  
+  .backLink:hover {
+    text-decoration: underline;
+  }
+  
+  .main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+  }
+  
+  .carouselContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .navButton {
+    position: absolute;
+    background-color: #e5e5e5;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .navButton:hover {
+    background-color: #d4d4d4;
+  }
+  
+  .navButton:first-child {
+    left: 0;
+  }
+  
+  .navButton:last-child {
+    right: 0;
+  }
+  
+  .emojiCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 3rem;
+    transition: all 0.3s ease;
+  }
+  
+  .emoji {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .emoji:hover {
+    transform: scale(1.1);
+  }
+  
+  .statLabel {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .progressContainer {
+    width: 100%;
+    background-color: #e5e5e5;
+    border-radius: 9999px;
+    height: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .progressBar {
+    height: 1rem;
+    border-radius: 9999px;
+    background-color: #0070f3;
+    transition: width 0.5s ease-out;
+  }
+  
+  .statValue {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .indicators {
+    display: flex;
+    margin-top: 2rem;
+  }
+  
+  .indicator {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin: 0 0.25rem;
+    border-radius: 50%;
+    background-color: #d4d4d4;
+    cursor: pointer;
+  }
+  
+  .activeIndicator {
+    background-color: #0070f3;
+  }
+  
+  .footer {
+    padding: 1rem;
+    text-align: center;
+    color: #666;
+  }
