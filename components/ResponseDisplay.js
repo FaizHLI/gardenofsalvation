@@ -7,7 +7,6 @@ const ResponseDisplay = ({ responseData }) => {
     return null;
   }
 
-  // Split responses into factual and other types
   const factualResponses = [];
   const otherResponses = [];
 
@@ -51,8 +50,6 @@ const ResponseDisplay = ({ responseData }) => {
                   <span className="ml-2 text-xs bg-purple-200 text-purple-800 px-2 py-1 rounded-full">
                   </span>
                 </div>
-                
-                {/* Render markdown for non-factual responses */}
                 <div className="markdown-content">
                   <ReactMarkdown
                     components={{

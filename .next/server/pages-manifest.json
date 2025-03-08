@@ -2,8 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/stats": "pages/stats.js",
   "/shop": "pages/shop.js",
-  "/fishTank": "pages/fishTank.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/stats": "pages/stats.js",
+  "/fishTank": "pages/fishTank.js"
 }
